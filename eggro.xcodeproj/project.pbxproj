@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF6E18D32A87D889001888D6 /* EggroBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E18D22A87D889001888D6 /* EggroBrain.swift */; };
+		FF7FF1C32A82F29400D5981B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FF1C22A82F29400D5981B /* AppDelegate.swift */; };
+		FF7FF1C52A82F29400D5981B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FF1C42A82F29400D5981B /* SceneDelegate.swift */; };
+		FF7FF1C72A82F29400D5981B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FF1C62A82F29400D5981B /* ViewController.swift */; };
+		FF7FF1CA2A82F29400D5981B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1C82A82F29400D5981B /* Main.storyboard */; };
+		FF7FF1CC2A82F29700D5981B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1CB2A82F29700D5981B /* Assets.xcassets */; };
+		FF7FF1CF2A82F29700D5981B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1CD2A82F29700D5981B /* LaunchScreen.storyboard */; };
+		FF7FF1D82A82F2DF00D5981B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FF1D72A82F2DF00D5981B /* NetworkManager.swift */; };
+		FF7FF1DA2A82F36000D5981B /* CPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FF1D92A82F36000D5981B /* CPIData.swift */; };
+		FFA681352A857EEB00AFB33B /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA681342A857EEB00AFB33B /* PrivateConstants.swift */; };
+		FFB66E7B2A89968400339582 /* NetworkManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB66E7A2A89968400339582 /* NetworkManagerDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FF6E18D22A87D889001888D6 /* EggroBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggroBrain.swift; sourceTree = "<group>"; };
+		FF7FF1BF2A82F29400D5981B /* eggro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eggro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF7FF1C22A82F29400D5981B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF7FF1C42A82F29400D5981B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FF7FF1C62A82F29400D5981B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF7FF1C92A82F29400D5981B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF7FF1CB2A82F29700D5981B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF7FF1CE2A82F29700D5981B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF7FF1D02A82F29700D5981B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF7FF1D72A82F2DF00D5981B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FF7FF1D92A82F36000D5981B /* CPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPIData.swift; sourceTree = "<group>"; };
+		FFA681342A857EEB00AFB33B /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
+		FFB66E7A2A89968400339582 /* NetworkManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF7FF1BC2A82F29400D5981B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF7FF1B62A82F29400D5981B = {
+			isa = PBXGroup;
+			children = (
+				FF7FF1C12A82F29400D5981B /* eggro */,
+				FF7FF1C02A82F29400D5981B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF7FF1C02A82F29400D5981B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF7FF1BF2A82F29400D5981B /* eggro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF7FF1C12A82F29400D5981B /* eggro */ = {
+			isa = PBXGroup;
+			children = (
+				FF7FF1D62A82F2CC00D5981B /* Models */,
+				FF7FF1C22A82F29400D5981B /* AppDelegate.swift */,
+				FF7FF1C42A82F29400D5981B /* SceneDelegate.swift */,
+				FF7FF1C62A82F29400D5981B /* ViewController.swift */,
+				FF7FF1C82A82F29400D5981B /* Main.storyboard */,
+				FF7FF1CB2A82F29700D5981B /* Assets.xcassets */,
+				FF7FF1CD2A82F29700D5981B /* LaunchScreen.storyboard */,
+				FF7FF1D02A82F29700D5981B /* Info.plist */,
+				FFA681342A857EEB00AFB33B /* PrivateConstants.swift */,
+			);
+			path = eggro;
+			sourceTree = "<group>";
+		};
+		FF7FF1D62A82F2CC00D5981B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF7FF1D72A82F2DF00D5981B /* NetworkManager.swift */,
+				FF7FF1D92A82F36000D5981B /* CPIData.swift */,
+				FF6E18D22A87D889001888D6 /* EggroBrain.swift */,
+				FFB66E7A2A89968400339582 /* NetworkManagerDelegate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF7FF1BE2A82F29400D5981B /* eggro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF7FF1D32A82F29700D5981B /* Build configuration list for PBXNativeTarget "eggro" */;
+			buildPhases = (
+				FF7FF1BB2A82F29400D5981B /* Sources */,
+				FF7FF1BC2A82F29400D5981B /* Frameworks */,
+				FF7FF1BD2A82F29400D5981B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eggro;
+			productName = eggro;
+			productReference = FF7FF1BF2A82F29400D5981B /* eggro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF7FF1B72A82F29400D5981B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					FF7FF1BE2A82F29400D5981B = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = FF7FF1BA2A82F29400D5981B /* Build configuration list for PBXProject "eggro" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF7FF1B62A82F29400D5981B;
+			productRefGroup = FF7FF1C02A82F29400D5981B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF7FF1BE2A82F29400D5981B /* eggro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF7FF1BD2A82F29400D5981B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF7FF1CF2A82F29700D5981B /* LaunchScreen.storyboard in Resources */,
+				FF7FF1CC2A82F29700D5981B /* Assets.xcassets in Resources */,
+				FF7FF1CA2A82F29400D5981B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF7FF1BB2A82F29400D5981B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF7FF1DA2A82F36000D5981B /* CPIData.swift in Sources */,
+				FF7FF1D82A82F2DF00D5981B /* NetworkManager.swift in Sources */,
+				FF6E18D32A87D889001888D6 /* EggroBrain.swift in Sources */,
+				FF7FF1C72A82F29400D5981B /* ViewController.swift in Sources */,
+				FFA681352A857EEB00AFB33B /* PrivateConstants.swift in Sources */,
+				FF7FF1C32A82F29400D5981B /* AppDelegate.swift in Sources */,
+				FF7FF1C52A82F29400D5981B /* SceneDelegate.swift in Sources */,
+				FFB66E7B2A89968400339582 /* NetworkManagerDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF7FF1C82A82F29400D5981B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF7FF1C92A82F29400D5981B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF7FF1CD2A82F29700D5981B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF7FF1CE2A82F29700D5981B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF7FF1D12A82F29700D5981B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF7FF1D22A82F29700D5981B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF7FF1D42A82F29700D5981B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2VGDLS59BV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = eggro/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.solgoldfarb.eggro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF7FF1D52A82F29700D5981B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2VGDLS59BV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = eggro/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.solgoldfarb.eggro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF7FF1BA2A82F29400D5981B /* Build configuration list for PBXProject "eggro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF7FF1D12A82F29700D5981B /* Debug */,
+				FF7FF1D22A82F29700D5981B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF7FF1D32A82F29700D5981B /* Build configuration list for PBXNativeTarget "eggro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF7FF1D42A82F29700D5981B /* Debug */,
+				FF7FF1D52A82F29700D5981B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF7FF1B72A82F29400D5981B /* Project object */;
+}
