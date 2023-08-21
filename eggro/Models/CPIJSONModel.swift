@@ -1,13 +1,13 @@
 //
-//  CPIData.swift
+//  CPIJSONModel.swift
 //  eggro
 //
-//  Created by Solomon Goldfarb on 8/8/23.
+//  Created by Solomon Goldfarb on 8/21/23.
 //
 
 import Foundation
 
-struct CPIData: Codable {
+struct CPIJSONModel: Codable {
     let results: Results
     
     private enum CodingKeys: String, CodingKey {
@@ -20,13 +20,12 @@ struct Results: Codable {
 }
 
 struct Series: Codable {
-    let data: [Data]
+    let data: [data]
 }
 
-struct Data: Codable {
+struct data: Codable {
     let year: String
     let period: String
     let periodName: String
     let value: String
 }
-

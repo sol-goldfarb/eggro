@@ -7,21 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF6E18D32A87D889001888D6 /* EggroBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6E18D22A87D889001888D6 /* EggroBrain.swift */; };
 		FF7FF1C32A82F29400D5981B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FF1C22A82F29400D5981B /* AppDelegate.swift */; };
 		FF7FF1C52A82F29400D5981B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FF1C42A82F29400D5981B /* SceneDelegate.swift */; };
 		FF7FF1C72A82F29400D5981B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FF1C62A82F29400D5981B /* ViewController.swift */; };
 		FF7FF1CA2A82F29400D5981B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1C82A82F29400D5981B /* Main.storyboard */; };
 		FF7FF1CC2A82F29700D5981B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1CB2A82F29700D5981B /* Assets.xcassets */; };
 		FF7FF1CF2A82F29700D5981B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1CD2A82F29700D5981B /* LaunchScreen.storyboard */; };
-		FF7FF1D82A82F2DF00D5981B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FF1D72A82F2DF00D5981B /* NetworkManager.swift */; };
-		FF7FF1DA2A82F36000D5981B /* CPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7FF1D92A82F36000D5981B /* CPIData.swift */; };
 		FFA681352A857EEB00AFB33B /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA681342A857EEB00AFB33B /* PrivateConstants.swift */; };
-		FFB66E7B2A89968400339582 /* NetworkManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB66E7A2A89968400339582 /* NetworkManagerDelegate.swift */; };
+		FFE660A22A941B560084F66C /* RetrieveParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A12A941B560084F66C /* RetrieveParseData.swift */; };
+		FFE660A42A941B920084F66C /* CPIJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A32A941B920084F66C /* CPIJSONModel.swift */; };
+		FFE660A62A941BCE0084F66C /* EggroCalcBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A52A941BCE0084F66C /* EggroCalcBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FF6E18D22A87D889001888D6 /* EggroBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggroBrain.swift; sourceTree = "<group>"; };
 		FF7FF1BF2A82F29400D5981B /* eggro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eggro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7FF1C22A82F29400D5981B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF7FF1C42A82F29400D5981B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,10 +28,10 @@
 		FF7FF1CB2A82F29700D5981B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF7FF1CE2A82F29700D5981B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF7FF1D02A82F29700D5981B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF7FF1D72A82F2DF00D5981B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		FF7FF1D92A82F36000D5981B /* CPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPIData.swift; sourceTree = "<group>"; };
 		FFA681342A857EEB00AFB33B /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
-		FFB66E7A2A89968400339582 /* NetworkManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDelegate.swift; sourceTree = "<group>"; };
+		FFE660A12A941B560084F66C /* RetrieveParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveParseData.swift; sourceTree = "<group>"; };
+		FFE660A32A941B920084F66C /* CPIJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPIJSONModel.swift; sourceTree = "<group>"; };
+		FFE660A52A941BCE0084F66C /* EggroCalcBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggroCalcBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +64,10 @@
 		FF7FF1C12A82F29400D5981B /* eggro */ = {
 			isa = PBXGroup;
 			children = (
-				FF7FF1D62A82F2CC00D5981B /* Models */,
 				FF7FF1C22A82F29400D5981B /* AppDelegate.swift */,
 				FF7FF1C42A82F29400D5981B /* SceneDelegate.swift */,
 				FF7FF1C62A82F29400D5981B /* ViewController.swift */,
+				FF7FF1D62A82F2CC00D5981B /* Models */,
 				FF7FF1C82A82F29400D5981B /* Main.storyboard */,
 				FF7FF1CB2A82F29700D5981B /* Assets.xcassets */,
 				FF7FF1CD2A82F29700D5981B /* LaunchScreen.storyboard */,
@@ -82,10 +80,9 @@
 		FF7FF1D62A82F2CC00D5981B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FF7FF1D72A82F2DF00D5981B /* NetworkManager.swift */,
-				FF7FF1D92A82F36000D5981B /* CPIData.swift */,
-				FF6E18D22A87D889001888D6 /* EggroBrain.swift */,
-				FFB66E7A2A89968400339582 /* NetworkManagerDelegate.swift */,
+				FFE660A12A941B560084F66C /* RetrieveParseData.swift */,
+				FFE660A32A941B920084F66C /* CPIJSONModel.swift */,
+				FFE660A52A941BCE0084F66C /* EggroCalcBrain.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,14 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF7FF1DA2A82F36000D5981B /* CPIData.swift in Sources */,
-				FF7FF1D82A82F2DF00D5981B /* NetworkManager.swift in Sources */,
-				FF6E18D32A87D889001888D6 /* EggroBrain.swift in Sources */,
 				FF7FF1C72A82F29400D5981B /* ViewController.swift in Sources */,
+				FFE660A62A941BCE0084F66C /* EggroCalcBrain.swift in Sources */,
+				FFE660A42A941B920084F66C /* CPIJSONModel.swift in Sources */,
 				FFA681352A857EEB00AFB33B /* PrivateConstants.swift in Sources */,
 				FF7FF1C32A82F29400D5981B /* AppDelegate.swift in Sources */,
 				FF7FF1C52A82F29400D5981B /* SceneDelegate.swift in Sources */,
-				FFB66E7B2A89968400339582 /* NetworkManagerDelegate.swift in Sources */,
+				FFE660A22A941B560084F66C /* RetrieveParseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
