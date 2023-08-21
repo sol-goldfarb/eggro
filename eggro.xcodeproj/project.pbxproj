@@ -15,8 +15,8 @@
 		FF7FF1CF2A82F29700D5981B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1CD2A82F29700D5981B /* LaunchScreen.storyboard */; };
 		FFE660A22A941B560084F66C /* RetrieveParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A12A941B560084F66C /* RetrieveParseData.swift */; };
 		FFE660A42A941B920084F66C /* CPIJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A32A941B920084F66C /* CPIJSONModel.swift */; };
-		FFE660A62A941BCE0084F66C /* EggroCalcBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A52A941BCE0084F66C /* EggroCalcBrain.swift */; };
 		FFE660A82A9422BD0084F66C /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A72A9422BD0084F66C /* PrivateConstants.swift */; };
+		FFE660AA2A9428560084F66C /* EggroCalcBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A92A9428560084F66C /* EggroCalcBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,11 +28,10 @@
 		FF7FF1CB2A82F29700D5981B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF7FF1CE2A82F29700D5981B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF7FF1D02A82F29700D5981B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFA681342A857EEB00AFB33B /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		FFE660A12A941B560084F66C /* RetrieveParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveParseData.swift; sourceTree = "<group>"; };
 		FFE660A32A941B920084F66C /* CPIJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPIJSONModel.swift; sourceTree = "<group>"; };
-		FFE660A52A941BCE0084F66C /* EggroCalcBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggroCalcBrain.swift; sourceTree = "<group>"; };
 		FFE660A72A9422BD0084F66C /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
+		FFE660A92A9428560084F66C /* EggroCalcBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggroCalcBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +82,7 @@
 			children = (
 				FFE660A12A941B560084F66C /* RetrieveParseData.swift */,
 				FFE660A32A941B920084F66C /* CPIJSONModel.swift */,
-				FFE660A52A941BCE0084F66C /* EggroCalcBrain.swift */,
+				FFE660A92A9428560084F66C /* EggroCalcBrain.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,13 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF7FF1C72A82F29400D5981B /* ViewController.swift in Sources */,
-				FFE660A62A941BCE0084F66C /* EggroCalcBrain.swift in Sources */,
 				FFE660A42A941B920084F66C /* CPIJSONModel.swift in Sources */,
-				FFA681352A857EEB00AFB33B /* PrivateConstants.swift in Sources */,
 				FF7FF1C32A82F29400D5981B /* AppDelegate.swift in Sources */,
 				FFE660A82A9422BD0084F66C /* PrivateConstants.swift in Sources */,
 				FF7FF1C52A82F29400D5981B /* SceneDelegate.swift in Sources */,
 				FFE660A22A941B560084F66C /* RetrieveParseData.swift in Sources */,
+				FFE660AA2A9428560084F66C /* EggroCalcBrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
