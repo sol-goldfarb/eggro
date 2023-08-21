@@ -30,29 +30,25 @@ extension ViewController: RetrieveParseDataDelegate {
             let baseYear = 2017
             let yearsSinceBase = dataArray[0][0] as! Int - baseYear
             let baseSpend = 200000
-            
+            let eggroCalcs = self.eggroCalcBrain.performCalcs(cpiDataArray: dataArray, baseYear: baseYear, baseSpend: baseSpend)
+                        
             print("The most recently available data is from \(dataArray[0][2]) \(dataArray[0][0]).")
+            
             print("Pre-tax spending in \(baseYear) was $\(baseSpend.withCommas()).")
             
-            let infAdj = (String(format: "%.2f", self.eggroCalcBrain.infAdj(cpiDataArray: dataArray, baseYear: baseYear)))
-            print("Inflation since \(dataArray[12 * yearsSinceBase][2]) \(dataArray[12 * yearsSinceBase][0]) is \(infAdj)%.")
+            print("Inflation since \(dataArray[12 * yearsSinceBase][2]) \(dataArray[12 * yearsSinceBase][0]) is \(String(format: "%.2f", (eggroCalcs.infAdj)))%.")
             
-            let infAdjSpend = self.eggroCalcBrain.infAdjSpend(cpiDataArray: dataArray, baseYear: baseYear, baseSpend: baseSpend)
-            print("The inflation adjusted spend is $\(infAdjSpend.withCommas()).")
+            print("The inflation adjusted spend is $\(eggroCalcs.infAdjSpend.withCommas()).")
             
-            self.infAdjSpendLabel.text = String("The inflation adjusted spend is $\(infAdjSpend.withCommas()).")
+            self.infAdjSpendLabel.text = String("The inflation adjusted spend is $\(eggroCalcs.infAdjSpend.withCommas()).")
             
-            let baseTargetInvLow = self.eggroCalcBrain.baseTargetInvLow(baseSpend: baseSpend)
-            print("Base Year Target Investments (4% Withdrawal) = $\(baseTargetInvLow.withCommas()).")
+            print("Base Year Target Investments (4% Withdrawal) = $\(eggroCalcs.baseTargetInvLow.withCommas()).")
             
-            let baseTargetInvHigh = self.eggroCalcBrain.baseTargetInvHigh(baseSpend: baseSpend)
-            print("Base Year Target Investments (3% Withdrawal) = $\(baseTargetInvHigh.withCommas()).")
+            print("Base Year Target Investments (3% Withdrawal) = $\(eggroCalcs.baseTargetInvHigh.withCommas()).")
             
-            let infAdjTargetInvLow = self.eggroCalcBrain.infAdjTargetInvLow(cpiDataArray: dataArray, baseYear: baseYear, baseSpend: baseSpend)
-            print("Inflation Adjusted Target Investments (4% Withdrawal) = $\(infAdjTargetInvLow.withCommas()).")
+            print("Inflation Adjusted Target Investments (4% Withdrawal) = $\(eggroCalcs.infAdjTargetInvLow.withCommas()).")
             
-            let infAdjTargetInvHigh = self.eggroCalcBrain.infAdjTargetInvHigh(cpiDataArray: dataArray, baseYear: baseYear, baseSpend: baseSpend)
-            print("Inflation Adjusted Target Investments (3% Withdrawal) = $\(infAdjTargetInvHigh.withCommas()).")
+            print("Inflation Adjusted Target Investments (3% Withdrawal) = $\(eggroCalcs.infAdjTargetInvHigh.withCommas()).")
             
         }
     }
