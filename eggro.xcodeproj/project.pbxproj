@@ -13,10 +13,10 @@
 		FF7FF1CA2A82F29400D5981B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1C82A82F29400D5981B /* Main.storyboard */; };
 		FF7FF1CC2A82F29700D5981B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1CB2A82F29700D5981B /* Assets.xcassets */; };
 		FF7FF1CF2A82F29700D5981B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1CD2A82F29700D5981B /* LaunchScreen.storyboard */; };
-		FFA681352A857EEB00AFB33B /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA681342A857EEB00AFB33B /* PrivateConstants.swift */; };
 		FFE660A22A941B560084F66C /* RetrieveParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A12A941B560084F66C /* RetrieveParseData.swift */; };
 		FFE660A42A941B920084F66C /* CPIJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A32A941B920084F66C /* CPIJSONModel.swift */; };
 		FFE660A62A941BCE0084F66C /* EggroCalcBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A52A941BCE0084F66C /* EggroCalcBrain.swift */; };
+		FFE660A82A9422BD0084F66C /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A72A9422BD0084F66C /* PrivateConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +32,7 @@
 		FFE660A12A941B560084F66C /* RetrieveParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveParseData.swift; sourceTree = "<group>"; };
 		FFE660A32A941B920084F66C /* CPIJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPIJSONModel.swift; sourceTree = "<group>"; };
 		FFE660A52A941BCE0084F66C /* EggroCalcBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggroCalcBrain.swift; sourceTree = "<group>"; };
+		FFE660A72A9422BD0084F66C /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +73,7 @@
 				FF7FF1CB2A82F29700D5981B /* Assets.xcassets */,
 				FF7FF1CD2A82F29700D5981B /* LaunchScreen.storyboard */,
 				FF7FF1D02A82F29700D5981B /* Info.plist */,
-				FFA681342A857EEB00AFB33B /* PrivateConstants.swift */,
+				FFE660A72A9422BD0084F66C /* PrivateConstants.swift */,
 			);
 			path = eggro;
 			sourceTree = "<group>";
@@ -163,6 +164,7 @@
 				FFE660A42A941B920084F66C /* CPIJSONModel.swift in Sources */,
 				FFA681352A857EEB00AFB33B /* PrivateConstants.swift in Sources */,
 				FF7FF1C32A82F29400D5981B /* AppDelegate.swift in Sources */,
+				FFE660A82A9422BD0084F66C /* PrivateConstants.swift in Sources */,
 				FF7FF1C52A82F29400D5981B /* SceneDelegate.swift in Sources */,
 				FFE660A22A941B560084F66C /* RetrieveParseData.swift in Sources */,
 			);
