@@ -7,22 +7,47 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource {
 
     var retrieveParseData = RetrieveParseData()
     var eggroCalcBrain = EggroCalcBrain()
     var baseYear: Int?
     var baseSpend: Int?
+    let yearArray: [String] = ["2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023"]
 
+    @IBOutlet weak var yearPicker: UIPickerView!
     @IBOutlet weak var infAdjSpendLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        yearPicker.dataSource = self
+        yearPicker.delegate = self
         retrieveParseData.delegate = self
         retrieveParseData.fetchData()
         
     }
     
+}
+
+extension ViewController: UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 11
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return yearArray[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedYear = yearArray[row]
+//        coinManager.getCoinPrice(cryptoType: "BTC", currency: selectedCurrency)
+    }
+
 }
 
 extension ViewController: RetrieveParseDataDelegate {
