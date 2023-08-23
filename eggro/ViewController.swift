@@ -32,10 +32,6 @@ class ViewController: UIViewController, UIPickerViewDataSource {
 
 extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
     
-    func isUserInteractionEnabled(in pickerView: UIPickerView) -> Bool {
-        return false
-    }
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -67,9 +63,6 @@ extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
         
         DispatchQueue.main.async {
 
-            func isUserInteractionEnabled(in pickerView: UIPickerView) -> Bool {
-                return true
-            }
             self.yearPicker.isHidden = false
             self.yearPicker.reloadAllComponents()
 
