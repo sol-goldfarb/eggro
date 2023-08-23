@@ -12,53 +12,67 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     var retrieveParseData = RetrieveParseData()
     var eggroCalcBrain = EggroCalcBrain()
     var baseYear: Int?
+    var selectedYear: Int?
     var baseSpend: Int?
-    let yearArray: [String] = ["2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023"]
+    var yearArray: [Int] = []
 
     @IBOutlet weak var yearPicker: UIPickerView!
     @IBOutlet weak var infAdjSpendLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        yearPicker.dataSource = self
-        yearPicker.delegate = self
         retrieveParseData.delegate = self
         retrieveParseData.fetchData()
-        
+        yearPicker.dataSource = self
+        yearPicker.delegate = self
+        yearPicker.isHidden = true
     }
-    
 }
 
-extension ViewController: UIPickerViewDelegate {
+
+extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
+    
+    func isUserInteractionEnabled(in pickerView: UIPickerView) -> Bool {
+        return false
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 11
+        return self.yearArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return yearArray[row]
+        return String(self.yearArray[row])
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedYear = yearArray[row]
+        var selectedYear = self.yearArray[row]
 //        coinManager.getCoinPrice(cryptoType: "BTC", currency: selectedCurrency)
     }
 
-}
-
-extension ViewController: RetrieveParseDataDelegate {
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
     
     func didRetrieveParseData(dataArray: [[Any]]) {
+        
+        self.yearArray = ((dataArray[0][0] as! Int - 10)...(dataArray[0][0] as! Int)).map { $0 }
         
         baseYear = 2017
         baseSpend = 200000
         
         DispatchQueue.main.async {
-            
+
+            func isUserInteractionEnabled(in pickerView: UIPickerView) -> Bool {
+                return true
+            }
+            self.yearPicker.isHidden = false
+            self.yearPicker.reloadAllComponents()
+
             if let baseYear = self.baseYear, let baseSpend = self.baseSpend {
                 
                 let yearsSinceBase = dataArray[0][0] as! Int - baseYear
@@ -85,11 +99,6 @@ extension ViewController: RetrieveParseDataDelegate {
             }
         }
     }
-    
-    func didFailWithError(error: Error) {
-        print(error)
-    }
-    
 }
 
 extension Int {
