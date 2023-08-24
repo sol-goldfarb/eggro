@@ -21,11 +21,11 @@ class ViewController: UIViewController, UIPickerViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        retrieveParseData.delegate = self
-        retrieveParseData.fetchData()
         yearPicker.dataSource = self
         yearPicker.delegate = self
         yearPicker.isHidden = true
+        retrieveParseData.delegate = self
+        retrieveParseData.fetchData()
     }
 }
 
