@@ -17,6 +17,9 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     var yearArray: [Int] = []
 
     @IBOutlet weak var yearPicker: UIPickerView!
+    
+    @IBOutlet weak var baseSpendTextField: UITextField!
+    
     @IBOutlet weak var infAdjSpendLabel: UILabel!
 
     override func viewDidLoad() {
@@ -59,7 +62,7 @@ extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
         self.yearArray = ((dataArray[0][0] as! Int - 10)...(dataArray[0][0] as! Int)).map { $0 }
         
         baseYear = 2017
-        baseSpend = 200000
+        baseSpend = 70000
         
         DispatchQueue.main.async {
 
@@ -93,6 +96,55 @@ extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
         }
     }
 }
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        baseSpendTextField.endEditing(true)
+        return true
+    }
+   
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let baseSpend = baseSpendTextField.text {
+/*            let cityWithNoSpaces: String = city.replacingOccurrences(of: " ", with: "%20")
+            weatherManager.fetchWeather(cityName: cityWithNoSpaces)
+ */
+        }
+        baseSpendTextField.text = "Pre-tax spending in base year"
+    }
+    
+}
+
+/*
+ extension ViewController: UITextFieldDelegate {
+     
+     @IBAction func searchPressed(_ sender: UIButton) {
+         searchTextField.endEditing(true)
+     }
+     
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+         searchTextField.endEditing(true)
+         return true
+     }
+     
+     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+         if textField.text != "" {
+             textField.placeholder = "Search for a City"
+             return true
+         } else {
+             textField.placeholder = "Enter a City Name"
+             return false
+         }
+     }
+     
+     func textFieldDidEndEditing(_ textField: UITextField) {
+         if let city = searchTextField.text {
+             let cityWithNoSpaces: String = city.replacingOccurrences(of: " ", with: "%20")
+             weatherManager.fetchWeather(cityName: cityWithNoSpaces)
+         }
+         searchTextField.text = ""
+     }
+ }
+ */
 
 extension Int {
     func withCommas() -> String {

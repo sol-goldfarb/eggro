@@ -13,6 +13,7 @@
 		FF7FF1CA2A82F29400D5981B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1C82A82F29400D5981B /* Main.storyboard */; };
 		FF7FF1CC2A82F29700D5981B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1CB2A82F29700D5981B /* Assets.xcassets */; };
 		FF7FF1CF2A82F29700D5981B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7FF1CD2A82F29700D5981B /* LaunchScreen.storyboard */; };
+		FFB29B6D2A97D68A00D7F08B /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB29B6C2A97D68A00D7F08B /* ResultsViewController.swift */; };
 		FFE660A22A941B560084F66C /* RetrieveParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A12A941B560084F66C /* RetrieveParseData.swift */; };
 		FFE660A42A941B920084F66C /* CPIJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A32A941B920084F66C /* CPIJSONModel.swift */; };
 		FFE660A82A9422BD0084F66C /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE660A72A9422BD0084F66C /* PrivateConstants.swift */; };
@@ -28,6 +29,7 @@
 		FF7FF1CB2A82F29700D5981B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF7FF1CE2A82F29700D5981B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF7FF1D02A82F29700D5981B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFB29B6C2A97D68A00D7F08B /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		FFE660A12A941B560084F66C /* RetrieveParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveParseData.swift; sourceTree = "<group>"; };
 		FFE660A32A941B920084F66C /* CPIJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPIJSONModel.swift; sourceTree = "<group>"; };
 		FFE660A72A9422BD0084F66C /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
@@ -64,9 +66,9 @@
 		FF7FF1C12A82F29400D5981B /* eggro */ = {
 			isa = PBXGroup;
 			children = (
+				FFB29B6B2A97D63200D7F08B /* Controllers */,
 				FF7FF1C22A82F29400D5981B /* AppDelegate.swift */,
 				FF7FF1C42A82F29400D5981B /* SceneDelegate.swift */,
-				FF7FF1C62A82F29400D5981B /* ViewController.swift */,
 				FF7FF1D62A82F2CC00D5981B /* Models */,
 				FF7FF1C82A82F29400D5981B /* Main.storyboard */,
 				FF7FF1CB2A82F29700D5981B /* Assets.xcassets */,
@@ -85,6 +87,15 @@
 				FFE660A92A9428560084F66C /* EggroCalcBrain.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FFB29B6B2A97D63200D7F08B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF7FF1C62A82F29400D5981B /* ViewController.swift */,
+				FFB29B6C2A97D68A00D7F08B /* ResultsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				FF7FF1C52A82F29400D5981B /* SceneDelegate.swift in Sources */,
 				FFE660A22A941B560084F66C /* RetrieveParseData.swift in Sources */,
 				FFE660AA2A9428560084F66C /* EggroCalcBrain.swift in Sources */,
+				FFB29B6D2A97D68A00D7F08B /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
