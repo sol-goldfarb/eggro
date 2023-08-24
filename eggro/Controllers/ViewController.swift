@@ -38,6 +38,7 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     @IBAction func calculatePressed(_ sender: UIButton) {
         
         self.baseSpend = Int(baseSpendTextField.text ?? "Error")
+        
         if let baseYear = self.selectedYear, let baseSpend = self.baseSpend {
             print("The base year is \(baseYear).")
             let yearsSinceBase = self.cpiDataArray[0][0] as! Int - baseYear
