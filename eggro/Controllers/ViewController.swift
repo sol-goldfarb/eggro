@@ -40,9 +40,11 @@ class ViewController: UIViewController, UIPickerViewDataSource {
         self.baseSpend = Int(baseSpendTextField.text ?? "Error")
         
         if let baseYear = self.selectedYear, let baseSpend = self.baseSpend {
-            print("The base year is \(baseYear).")
+
             let yearsSinceBase = self.cpiDataArray[0][0] as! Int - baseYear
             let eggroCalcs = self.eggroCalcBrain.performCalcs(cpiDataArray: cpiDataArray, baseYear: baseYear, baseSpend: baseSpend)
+            
+            baseSpendTextField.text = ""
             
             print("The most recently available data is from \(cpiDataArray[0][2]) \(cpiDataArray[0][0]).")
             
@@ -119,7 +121,6 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if baseSpendTextField.text != "" {
-            self.view.endEditing(true)
             return true
         } else {
             return false
