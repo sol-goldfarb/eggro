@@ -11,11 +11,14 @@ class ViewController: UIViewController, UIPickerViewDataSource {
 
     var retrieveParseData = RetrieveParseData()
     var eggroCalcBrain = EggroCalcBrain()
+    var mostRecentMonth: String?
+    var mostRecentYear: Int?
     var baseYear: Int?
     var selectedYear: Int?
     var baseSpend: Int?
     var yearArray: [Int] = []
     var cpiDataArray: [[Any]] = [[]]
+    var eggroCalcs: (infAdj: Double?, infAdjSpend: Int?, baseTargetInvLow: Int?, baseTargetInvHigh: Int?, infAdjTargetInvLow: Int?, infAdjTargetInvHigh: Int?)
 
     @IBOutlet weak var yearPicker: UIPickerView!
     
@@ -41,33 +44,34 @@ class ViewController: UIViewController, UIPickerViewDataSource {
         
         if let baseYear = self.selectedYear, let baseSpend = self.baseSpend {
 
-            let yearsSinceBase = self.cpiDataArray[0][0] as! Int - baseYear
-            let eggroCalcs = self.eggroCalcBrain.performCalcs(cpiDataArray: cpiDataArray, baseYear: baseYear, baseSpend: baseSpend)
+            self.mostRecentMonth = self.cpiDataArray[0][2] as? String
+            self.mostRecentYear = self.cpiDataArray[0][0] as? Int
             
-            baseSpendTextField.text = ""
+            self.baseYear = baseYear
+                        
+            self.eggroCalcs = self.eggroCalcBrain.performCalcs(cpiDataArray: cpiDataArray, baseYear: baseYear, baseSpend: baseSpend)
             
-            print("The most recently available data is from \(cpiDataArray[0][2]) \(cpiDataArray[0][0]).")
-            
-            print("Pre-tax spending in \(baseYear) was $\(baseSpend.withCommas()).")
-            
-            print("Inflation since \(cpiDataArray[12 * yearsSinceBase][2]) \(cpiDataArray[12 * yearsSinceBase][0]) is \(String(format: "%.2f", (eggroCalcs.infAdj)))%.")
-            
-            print("The inflation adjusted spend is $\(eggroCalcs.infAdjSpend.withCommas()).")
-            
-            print("The inflation adjusted spend is $\(eggroCalcs.infAdjSpend.withCommas()).")
-            
-            print("Base Year Target Investments (4% Withdrawal) = $\(eggroCalcs.baseTargetInvLow.withCommas()).")
-            
-            print("Base Year Target Investments (3% Withdrawal) = $\(eggroCalcs.baseTargetInvHigh.withCommas()).")
-            
-            print("Inflation Adjusted Target Investments (4% Withdrawal) = $\(eggroCalcs.infAdjTargetInvLow.withCommas()).")
-            
-            print("Inflation Adjusted Target Investments (3% Withdrawal) = $\(eggroCalcs.infAdjTargetInvHigh.withCommas()).")
+            self.performSegue(withIdentifier: "goToResults", sender: self)
             
         }
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResults" {
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.mostRecentMonth = self.mostRecentMonth
+            destinationVC.mostRecentYear = self.mostRecentYear
+            destinationVC.baseYear = self.baseYear
+            destinationVC.baseSpend = self.baseSpend
+            destinationVC.infAdj = self.eggroCalcs.infAdj
+            destinationVC.infAdjSpend = self.eggroCalcs.infAdjSpend
+            destinationVC.baseTargetInvLow = self.eggroCalcs.baseTargetInvLow
+            destinationVC.baseTargetInvHigh = self.eggroCalcs.baseTargetInvHigh
+            destinationVC.infAdjTargetInvLow = self.eggroCalcs.infAdjTargetInvLow
+            destinationVC.infAdjTargetInvHigh = self.eggroCalcs.infAdjTargetInvHigh
+        }
+    }
 }
 
 
@@ -92,7 +96,6 @@ extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
     func didFailWithError(error: Error) {
         print(error)
     }
-    
     
     func didRetrieveParseData(dataArray: [[Any]]) {
         
@@ -128,13 +131,4 @@ extension ViewController: UITextFieldDelegate {
     }
 }
     
-
-extension Int {
-    func withCommas() -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        return numberFormatter.string(from: NSNumber(value:self))!
-    }
-}
-
 
