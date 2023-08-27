@@ -10,15 +10,12 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDataSource {
 
     var retrieveParseData = RetrieveParseData()
-    var eggroCalcBrain = EggroCalcBrain()
-    var mostRecentMonth: String?
     var mostRecentYear: Int?
     var baseYear: Int?
     var selectedYear: Int?
     var baseSpend: Int?
     var yearArray: [Int] = []
     var cpiDataArray: [[Any]] = [[]]
-    var eggroCalcs: (infAdj: Double?, infAdjSpend: Int?, baseTargetInvLow: Int?, baseTargetInvHigh: Int?, infAdjTargetInvLow: Int?, infAdjTargetInvHigh: Int?)
 
     @IBOutlet weak var yearPicker: UIPickerView!
     
@@ -42,15 +39,12 @@ class ViewController: UIViewController, UIPickerViewDataSource {
         
         self.baseSpend = Int(baseSpendTextField.text ?? "Error")
         
-        if let baseYear = self.selectedYear, let baseSpend = self.baseSpend {
+        if let baseYear = self.selectedYear {
 
-            self.mostRecentMonth = self.cpiDataArray[0][2] as? String
             self.mostRecentYear = self.cpiDataArray[0][0] as? Int
             
             self.baseYear = baseYear
                         
-            self.eggroCalcs = self.eggroCalcBrain.performCalcs(cpiDataArray: cpiDataArray, baseYear: baseYear, baseSpend: baseSpend)
-            
             self.performSegue(withIdentifier: "goToResults", sender: self)
             
         }
@@ -60,16 +54,10 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResults" {
             let destinationVC = segue.destination as! ResultsViewController
-            destinationVC.mostRecentMonth = self.mostRecentMonth
+            destinationVC.cpiDataArray = self.cpiDataArray
             destinationVC.mostRecentYear = self.mostRecentYear
             destinationVC.baseYear = self.baseYear
             destinationVC.baseSpend = self.baseSpend
-            destinationVC.infAdj = self.eggroCalcs.infAdj
-            destinationVC.infAdjSpend = self.eggroCalcs.infAdjSpend
-            destinationVC.baseTargetInvLow = self.eggroCalcs.baseTargetInvLow
-            destinationVC.baseTargetInvHigh = self.eggroCalcs.baseTargetInvHigh
-            destinationVC.infAdjTargetInvLow = self.eggroCalcs.infAdjTargetInvLow
-            destinationVC.infAdjTargetInvHigh = self.eggroCalcs.infAdjTargetInvHigh
         }
     }
 }
