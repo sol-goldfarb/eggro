@@ -74,7 +74,6 @@
 				FF7FF1C22A82F29400D5981B /* AppDelegate.swift */,
 				FF7FF1C42A82F29400D5981B /* SceneDelegate.swift */,
 				FF7FF1D62A82F2CC00D5981B /* Models */,
-				FF7FF1C82A82F29400D5981B /* Main.storyboard */,
 				FF7FF1CB2A82F29700D5981B /* Assets.xcassets */,
 				FF7FF1CD2A82F29700D5981B /* LaunchScreen.storyboard */,
 				FF7FF1D02A82F29700D5981B /* Info.plist */,
@@ -91,6 +90,7 @@
 				FFE660A12A941B560084F66C /* RetrieveParseData.swift */,
 				FFE660A32A941B920084F66C /* CPIJSONModel.swift */,
 				FFE660A92A9428560084F66C /* EggroCalcBrain.swift */,
+				FF7FF1C82A82F29400D5981B /* Main.storyboard */,
 			);
 			path = Models;
 			sourceTree = "<group>";

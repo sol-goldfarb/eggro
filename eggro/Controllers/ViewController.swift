@@ -106,6 +106,7 @@ extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if baseSpendTextField.text != "" {
             self.view.endEditing(true)
+            self.baseSpendTextField.resignFirstResponder()
             return true
         } else {
             return false
@@ -114,6 +115,8 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if baseSpendTextField.text != "" {
+            self.view.endEditing(true)
+            self.baseSpendTextField.resignFirstResponder()
             return true
         } else {
             return false

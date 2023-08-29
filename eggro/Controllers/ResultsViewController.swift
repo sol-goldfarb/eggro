@@ -27,6 +27,14 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var baseSpendAmtLabel: UILabel!
     @IBOutlet weak var baseSpendExplanationLabel: UILabel!
     
+    @IBOutlet weak var infAdjSpendAmtLabel: UILabel!
+    @IBOutlet weak var infAdjSpendExplanationLabel: UILabel!
+    
+    @IBOutlet weak var targetInvLowAmtLabel: UILabel!
+    @IBOutlet weak var targetInvLowExplanationLabel: UILabel!
+    
+    @IBOutlet weak var targetInvHighAmtLabel: UILabel!
+    @IBOutlet weak var targetInvHighExplanationLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +56,32 @@ class ResultsViewController: UIViewController {
                 baseSpendExplanationLabel.text = "Pre-tax spending in \(baseYear)"
             }
             
-                    
+            if let infAdjSpend {
+                infAdjSpendAmtLabel.text = "$\(infAdjSpend.withCommas())"
+            }
+            
+            if let mostRecentMonth, let mostRecentYear, let infAdj {
+                infAdjSpendExplanationLabel.text = "Base spend adjusted for \(String(format: "%.2f", (infAdj)))% inflation from \(mostRecentMonth) \(baseYear) to \(mostRecentMonth) \(mostRecentYear)"
+            }
+            
+            if let infAdjTargetInvLow {
+                targetInvLowAmtLabel.text = "$\(infAdjTargetInvLow.withCommas())"
+            }
+            
+            if let mostRecentMonth, let mostRecentYear {
+                targetInvLowExplanationLabel.text = "Target investment level assuming 4% annual withdrawal rate, using \(mostRecentMonth) \(mostRecentYear) inflation-adjusted spending"
+            }
+            
+            if let infAdjTargetInvHigh {
+                targetInvHighAmtLabel.text = "$\(infAdjTargetInvHigh.withCommas())"
+            }
+            
+            if let mostRecentMonth, let mostRecentYear {
+                targetInvHighExplanationLabel.text = "Target investment level assuming 3% annual withdrawal rate, using \(mostRecentMonth) \(mostRecentYear) inflation-adjusted spending"
+            }
+            
+            
+            
             if let mostRecentMonth, let infAdj {
                 print("Inflation since \(mostRecentMonth) \(baseYear) is \(String(format: "%.2f", (infAdj)))%.")
             }
