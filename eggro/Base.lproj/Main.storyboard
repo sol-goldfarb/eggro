@@ -19,6 +19,7 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9b2-C8-j37">
                                 <rect key="frame" x="0.0" y="397" width="393" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Please select a year"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8k-EH-PN8">
                                 <rect key="frame" x="149" y="658" width="95" height="35"/>
@@ -57,11 +58,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="als-pQ-HrE">
-                                <rect key="frame" x="141" y="551" width="112" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJT-p2-NMK" userLabel="Colored Background">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                                <color key="backgroundColor" red="0.40784313725490196" green="0.61960784313725492" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKb-10-izb" userLabel="Base Spend Widget" customClass="RoundedView" customModule="eggro" customModuleProvider="target">
+                                <rect key="frame" x="10" y="50" width="373" height="164"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="08m-hs-U5A">
+                                        <rect key="frame" x="10" y="10" width="266.33333333333331" height="86"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4tq-Eg-tMd">
+                                                <rect key="frame" x="0.0" y="-2.0000000000000036" width="24.333333333333332" height="24.666666666666668"/>
+                                                <color key="tintColor" red="0.32156862745098036" green="0.35686274509803922" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qwx-QL-THO">
+                                                <rect key="frame" x="34.333333333333343" y="0.0" width="232.00000000000003" height="86"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Base Spend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeA-J9-eUV" userLabel="Base Spend Widget Header">
+                                                        <rect key="frame" x="0.0" y="0.0" width="79.333333333333329" height="19.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
+                                                        <color key="textColor" red="0.32156862745098036" green="0.35686274509803922" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="highlightedColor" red="0.1647058824" green="0.34901960780000002" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </label>
+                                                    <view autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="X52-dy-eGu" userLabel="Spacer">
+                                                        <rect key="frame" x="0.0" y="24.666666666666671" width="232" height="5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="5" id="Uh5-11-CIR"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dollar amt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsG-Bo-7hv" userLabel="Base Spend Amt Label">
+                                                        <rect key="frame" x="0.0" y="34.666666666666671" width="124.66666666666667" height="29"/>
+                                                        <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcB-EX-ijM" userLabel="Base Spend Explanation Label">
+                                                        <rect key="frame" x="0.0" y="68.666666666666657" width="70.666666666666671" height="17.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="15"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.89411764705882346" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="08m-hs-U5A" firstAttribute="leading" secondItem="qKb-10-izb" secondAttribute="leading" constant="10" id="Ah3-9C-kH5"/>
+                                    <constraint firstItem="08m-hs-U5A" firstAttribute="top" secondItem="qKb-10-izb" secondAttribute="top" constant="10" id="YOR-MZ-Gqt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="als-pQ-HrE" customClass="RoundedButton" customModule="eggro" customModuleProvider="target">
+                                <rect key="frame" x="125.00000000000001" y="780" width="143.33333333333337" height="37"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Recalculate"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Recalculate">
+                                    <fontDescription key="titleFontDescription" name="Georgia-Bold" family="Georgia" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="0.92549019610000005" green="0.89411764709999997" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="baseBackgroundColor" red="0.1647058824" green="0.34901960780000002" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="recalculatePressed:" destination="XdC-oT-jIe" eventType="touchUpInside" id="QN0-cf-9sq"/>
                                 </connections>
@@ -69,14 +148,36 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZJf-gN-azF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iJT-p2-NMK" firstAttribute="leading" secondItem="D7b-jx-iMu" secondAttribute="leading" id="0G6-4U-QVv"/>
+                            <constraint firstItem="iJT-p2-NMK" firstAttribute="bottom" secondItem="D7b-jx-iMu" secondAttribute="bottom" id="2hW-kj-Fwu"/>
+                            <constraint firstItem="qKb-10-izb" firstAttribute="bottom" secondItem="D7b-jx-iMu" secondAttribute="bottom" constant="-628" id="5Q2-Am-QjZ"/>
+                            <constraint firstItem="iJT-p2-NMK" firstAttribute="top" secondItem="D7b-jx-iMu" secondAttribute="top" id="6wz-DX-G8I"/>
+                            <constraint firstItem="ZJf-gN-azF" firstAttribute="bottom" secondItem="als-pQ-HrE" secondAttribute="bottom" constant="25" id="8pU-9S-XnQ"/>
+                            <constraint firstItem="als-pQ-HrE" firstAttribute="centerX" secondItem="D7b-jx-iMu" secondAttribute="centerX" id="ZqP-eT-GCe"/>
+                            <constraint firstItem="qKb-10-izb" firstAttribute="top" secondItem="ZJf-gN-azF" secondAttribute="top" constant="50" id="fiY-k2-1XR"/>
+                            <constraint firstItem="iJT-p2-NMK" firstAttribute="trailing" secondItem="D7b-jx-iMu" secondAttribute="trailing" id="qgY-U0-A7a"/>
+                            <constraint firstItem="qKb-10-izb" firstAttribute="trailing" secondItem="ZJf-gN-azF" secondAttribute="trailing" constant="-10" id="xcg-jE-8Rh"/>
+                            <constraint firstItem="qKb-10-izb" firstAttribute="leading" secondItem="ZJf-gN-azF" secondAttribute="leading" constant="10" id="zWv-fa-9uj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="baseSpendAmtLabel" destination="RsG-Bo-7hv" id="CAy-p2-4hk"/>
+                        <outlet property="baseSpendExplanationLabel" destination="qcB-EX-ijM" id="0iF-jL-VtJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vdh-7l-BEj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="-35"/>
+            <point key="canvasLocation" x="1156.4885496183206" y="-35.211267605633807"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="als-pQ-HrE">
+            <size key="intrinsicContentSize" width="143.33333333333334" height="37"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="bird" catalog="system" width="126" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

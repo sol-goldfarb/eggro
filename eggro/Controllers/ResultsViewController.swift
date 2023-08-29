@@ -23,6 +23,9 @@ class ResultsViewController: UIViewController {
     var baseTargetInvHigh: Int?
     var infAdjTargetInvLow: Int?
     var infAdjTargetInvHigh: Int?
+
+    @IBOutlet weak var baseSpendAmtLabel: UILabel!
+    @IBOutlet weak var baseSpendExplanationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,12 @@ class ResultsViewController: UIViewController {
             
             if let mostRecentMonth, let mostRecentYear {
                 print("The most recently available data is from \(mostRecentMonth) \(mostRecentYear).")
+                
+                baseSpendAmtLabel.text = "$\(baseSpend.withCommas())"
+                
+                baseSpendExplanationLabel.text = "Pre-tax spending in \(baseYear)"
             }
+            
                     
             if let mostRecentMonth, let infAdj {
                 print("Inflation since \(mostRecentMonth) \(baseYear) is \(String(format: "%.2f", (infAdj)))%.")
