@@ -7,7 +7,7 @@
 
 import UIKit
 
-@IBDesignable
+// @IBDesignable
 
 class RoundedButton: UIButton {
     

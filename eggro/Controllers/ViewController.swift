@@ -21,6 +21,8 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     
     @IBOutlet weak var baseSpendTextField: UITextField!
     
+    @IBOutlet weak var calculateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         yearPicker.dataSource = self
