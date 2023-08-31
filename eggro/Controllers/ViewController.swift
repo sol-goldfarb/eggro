@@ -41,8 +41,14 @@ class ViewController: UIViewController, UIPickerViewDataSource {
         
         self.baseSpend = Int(baseSpendTextField.text ?? "Error")
         
-        if let baseYear = self.selectedYear {
+        self.baseSpendTextField.endEditing(true)
+        self.baseSpendTextField.resignFirstResponder()
+        self.baseSpendTextField.text = nil
+        
+        if let baseYear = self.selectedYear, let baseSpend {
 
+            print("The base spend is \(baseSpend).")
+            
             self.mostRecentYear = self.cpiDataArray[0][0] as? Int
             
             self.baseYear = baseYear
@@ -63,7 +69,6 @@ class ViewController: UIViewController, UIPickerViewDataSource {
         }
     }
 }
-
 
 extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
     
@@ -103,25 +108,17 @@ extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
 
 extension ViewController: UITextFieldDelegate {
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if baseSpendTextField.text != "" {
-            self.view.endEditing(true)
-            self.baseSpendTextField.resignFirstResponder()
-            return true
-        } else {
-            return false
-        }
+    func textFieldDidEndEditing(_ textField: UITextField)  {
+        self.view.endEditing(true)
+        self.view.resignFirstResponder()
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if baseSpendTextField.text != "" {
-            self.view.endEditing(true)
-            self.baseSpendTextField.resignFirstResponder()
-            return true
-        } else {
-            return false
-        }
+        self.view.endEditing(true)
+        self.view.resignFirstResponder()
+        return true
     }
+    
 }
     
 
