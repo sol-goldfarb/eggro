@@ -12,9 +12,10 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     var retrieveParseData = RetrieveParseData()
     var mostRecentYear: Int?
     var baseYear: Int?
-    var selectedYear: Int?
+    var selectedYear: String?
     var baseSpend: Int?
     var yearArray: [Int] = []
+    var yearArrayAsStrings: [String] = ["Select Year"]
     var cpiDataArray: [[Any]] = [[]]
 
     @IBOutlet weak var yearPicker: UIPickerView!
@@ -43,18 +44,21 @@ class ViewController: UIViewController, UIPickerViewDataSource {
         
         self.baseSpendTextField.endEditing(true)
         self.baseSpendTextField.resignFirstResponder()
-        self.baseSpendTextField.text = nil
         
-        if let baseYear = self.selectedYear, let baseSpend {
-
-            print("The base spend is \(baseSpend).")
+        
+        if let baseYear = self.selectedYear {
             
-            self.mostRecentYear = self.cpiDataArray[0][0] as? Int
-            
-            self.baseYear = baseYear
-                        
-            self.performSegue(withIdentifier: "goToResults", sender: self)
-            
+            if self.selectedYear != "Select Year" {
+                self.mostRecentYear = self.cpiDataArray[0][0] as? Int
+                
+                self.baseYear = Int(baseYear)
+                            
+                self.performSegue(withIdentifier: "goToResults", sender: self)
+                
+                self.baseSpendTextField.text = nil
+                
+                self.yearPicker.selectRow(0, inComponent: 0, animated: true)
+            }
         }
         
     }
@@ -77,15 +81,15 @@ extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.yearArray.count
+        return self.yearArrayAsStrings.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(self.yearArray[row])
+        return String(self.yearArrayAsStrings[row])
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        return selectedYear = self.yearArray[row]
+        return selectedYear = self.yearArrayAsStrings[row]
     }
 
     func didFailWithError(error: Error) {
@@ -96,6 +100,9 @@ extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
         
         self.cpiDataArray = dataArray
         self.yearArray = ((dataArray[0][0] as! Int - 10)...(dataArray[0][0] as! Int)).map { $0 }
+        for year in self.yearArray {
+            self.yearArrayAsStrings.append(String(year))
+        }
         
         DispatchQueue.main.async {
             

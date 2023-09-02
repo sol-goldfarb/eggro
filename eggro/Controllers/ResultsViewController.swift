@@ -48,13 +48,8 @@ class ResultsViewController: UIViewController {
             self.infAdjTargetInvLow = self.eggroCalcs.infAdjTargetInvLow
             self.infAdjTargetInvHigh = self.eggroCalcs.infAdjTargetInvHigh
             
-            if let mostRecentMonth, let mostRecentYear {
-                print("The most recently available data is from \(mostRecentMonth) \(mostRecentYear).")
-                
-                baseSpendAmtLabel.text = "$\(baseSpend.withCommas())"
-                
-                baseSpendExplanationLabel.text = "Pre-tax spending in \(baseYear)"
-            }
+            baseSpendAmtLabel.text = "$\(baseSpend.withCommas())"
+            baseSpendExplanationLabel.text = "Pre-tax spending in \(baseYear)"
             
             if let infAdjSpend {
                 infAdjSpendAmtLabel.text = "$\(infAdjSpend.withCommas())"
@@ -78,32 +73,6 @@ class ResultsViewController: UIViewController {
             
             if let mostRecentMonth, let mostRecentYear {
                 targetInvHighExplanationLabel.text = "Target investment level assuming 3% annual withdrawal rate, using \(mostRecentMonth) \(mostRecentYear) inflation-adjusted spending"
-            }
-            
-            
-            
-            if let mostRecentMonth, let infAdj {
-                print("Inflation since \(mostRecentMonth) \(baseYear) is \(String(format: "%.2f", (infAdj)))%.")
-            }
-            
-            if let infAdjSpend {
-                print("The inflation adjusted spend is $\(infAdjSpend.withCommas()).")
-            }
-            
-            if let baseTargetInvLow {
-                print("Base Year Target Investments (4% Withdrawal) = $\(baseTargetInvLow.withCommas()).")
-            }
-            
-            if let baseTargetInvHigh {
-                print("Base Year Target Investments (3% Withdrawal) = $\(baseTargetInvHigh.withCommas()).")
-            }
-            
-            if let infAdjTargetInvLow {
-                print("Inflation Adjusted Target Investments (4% Withdrawal) = $\(infAdjTargetInvLow.withCommas()).")
-            }
-            
-            if let infAdjTargetInvHigh {
-                print("Inflation Adjusted Target Investments (3% Withdrawal) = $\(infAdjTargetInvHigh.withCommas()).")
             }
         }
     }
