@@ -26,6 +26,9 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         yearPicker.dataSource = self
         yearPicker.delegate = self
         yearPicker.isHidden = true
@@ -34,8 +37,11 @@ class ViewController: UIViewController, UIPickerViewDataSource {
         baseSpendTextField.placeholder = "Pre-tax spending in base year"
         
         retrieveParseData.delegate = self
-        retrieveParseData.fetchData()
         
+    }
+    
+    @objc func applicationWillEnterForeground(notification: Notification) {
+        retrieveParseData.fetchData()
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
