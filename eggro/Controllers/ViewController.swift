@@ -46,7 +46,7 @@ class ViewController: UIViewController, UIPickerViewDataSource {
     
     @IBAction func calculatePressed(_ sender: UIButton) {
         
-        self.baseSpend = Int(baseSpendTextField.text ?? "Error")
+        self.baseSpend = Int(baseSpendTextField.text?.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "$", with: "") ?? "0")
         
         self.baseSpendTextField.endEditing(true)
         self.baseSpendTextField.resignFirstResponder()
@@ -54,7 +54,8 @@ class ViewController: UIViewController, UIPickerViewDataSource {
         
         if let baseYear = self.selectedYear {
             
-            if self.selectedYear != "Select Year" {
+            if self.selectedYear != "Select Year" && self.baseSpend != nil {
+                
                 self.mostRecentYear = self.cpiDataArray[0][0] as? Int
                 
                 self.baseYear = Int(baseYear)
@@ -62,6 +63,8 @@ class ViewController: UIViewController, UIPickerViewDataSource {
                 self.performSegue(withIdentifier: "goToResults", sender: self)
                 
                 self.baseSpendTextField.text = nil
+                
+                self.selectedYear = "Select Year"
                 
                 self.yearPicker.selectRow(0, inComponent: 0, animated: true)
             }
@@ -119,6 +122,7 @@ extension ViewController: RetrieveParseDataDelegate, UIPickerViewDelegate {
     }
 }
 
+
 extension ViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField)  {
@@ -129,6 +133,26 @@ extension ViewController: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         self.view.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        guard let textFieldHasText = (textField.text), !textFieldHasText.isEmpty else {
+            return true
+        }
+
+        let formatter = NumberFormatter()
+
+        formatter.numberStyle = .currency
+        formatter.locale = .current
+        formatter.maximumFractionDigits = 0
+        formatter.allowsFloats = false
+
+        let textRemovedCommmaAndDollarSign = textFieldHasText.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "$", with: "")
+        
+        let formattedNum = formatter.string(from: NSNumber(value: Int(textRemovedCommmaAndDollarSign) ?? 0))
+        textField.text = formattedNum
         return true
     }
     
